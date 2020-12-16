@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,13 +36,13 @@ public class AddressPage {
     @FindBy(name = "phone")
     WebElement phoneInput;
 
-    @FindBy(name = "submitAddress")
+    @FindBy(css = ".btn.btn-primary")
     WebElement submitButton;
 
     @FindBy(css = ".alert.alert-success")
     WebElement successInformation;
 
-    public void addAddress(String alias, String address, String city, String postcode, String phone, String country) {
+    public void addAddress(String alias, String address, String city, String postcode, String country, String phone) {
         aliasInput.click();
         aliasInput.clear();
         aliasInput.sendKeys(alias);
@@ -58,6 +59,7 @@ public class AddressPage {
         postCodeInput.clear();
         postCodeInput.sendKeys(postcode);
 
+       // countryList.click();
         Select countryElement = new Select(countryList);
         countryElement.selectByVisibleText(country);
 
