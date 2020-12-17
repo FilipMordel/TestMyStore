@@ -59,13 +59,17 @@ public class AddressPage {
         postCodeInput.clear();
         postCodeInput.sendKeys(postcode);
 
-       // countryList.click();
         Select countryElement = new Select(countryList);
         countryElement.selectByVisibleText(country);
 
         phoneInput.click();
         phoneInput.clear();
         phoneInput.sendKeys(phone);
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+        }
 
         submitButton.click();
 

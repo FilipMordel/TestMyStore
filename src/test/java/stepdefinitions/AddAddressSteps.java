@@ -56,5 +56,6 @@ public class AddAddressSteps {
     @Then("^User gets \"([^\"]*)\"$")
     public void userSees(String actionMessage) {
         Assert.assertEquals(actionMessage, addressPage.getUpdateInformation());
+        driver.quit();
     }
 }

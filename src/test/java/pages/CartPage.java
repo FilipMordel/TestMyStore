@@ -21,12 +21,30 @@ public class CartPage {
     @FindBy(css = ".cart-content-btn .btn.btn-primary")
     WebElement checkoutButton;
 
+    @FindBy(css = ".text-sm-center .btn.btn-primary")
+    WebElement proceedButton;
+
+    @FindBy(name = "confirm-addresses")
+    WebElement conButton;
+
+    @FindBy(name = "confirmDeliveryOption")
+    WebElement deliveryButton;
+
+    @FindBy(id = "payment-option-1")
+    WebElement paymentButton;
+
+    @FindBy(id = "conditions_to_approve[terms-and-conditions]")
+    WebElement conditionsButton;
+
+    @FindBy(css = ".btn.btn-primary.center-block")
+    WebElement centerButton;
+
+
     public void setCartButton() {
 
-        try{
+        try {
             Thread.sleep(2000);
-        }
-        catch(InterruptedException ie){
+        } catch (InterruptedException ie) {
         }
         addButton.click();
         try {
@@ -34,6 +52,36 @@ public class CartPage {
         } catch (InterruptedException ie) {
         }
         checkoutButton.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+        }
+        proceedButton.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+        }
+        conButton.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+        }
+        deliveryButton.click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ie) {
+        }
+        paymentButton.click();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ie) {
+        }
+        conditionsButton.click();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException ie) {
+        }
+        centerButton.click();
     }
 
 }
