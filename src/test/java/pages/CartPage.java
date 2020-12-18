@@ -52,35 +52,11 @@ public class CartPage {
         } catch (InterruptedException ie) {
         }
         checkoutButton.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ie) {
-        }
         proceedButton.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ie) {
-        }
         conButton.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ie) {
-        }
         deliveryButton.click();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException ie) {
-        }
         paymentButton.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ie) {
-        }
         conditionsButton.click();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException ie) {
-        }
         centerButton.click();
     }
 
