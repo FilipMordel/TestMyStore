@@ -1,7 +1,7 @@
 Feature:Buy item after login
 
   Scenario Outline: Buy new item
-    Given User is logged Mystore
+    Given User is logged to Mystore
     When User goes to PrintedSweaterPage
     And User adds and saves <size> and <quantity>
     And User add item to cart and buy it
