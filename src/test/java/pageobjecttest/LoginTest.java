@@ -25,7 +25,7 @@ public class LoginTest {
     public void testLoginWithProperCredentials() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginAs("ovmgqwhyggctorygtn@miucce.com", "warsztaty");
-        Assert.assertEquals("Automated Tester", loginPage.getLoggedUsername());
+        Assert.assertEquals("Filip Mordel", loginPage.getLoggedUsername());
     }
 
 

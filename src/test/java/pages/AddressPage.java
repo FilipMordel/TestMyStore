@@ -42,7 +42,9 @@ public class AddressPage {
     @FindBy(css = ".alert.alert-success")
     WebElement successInformation;
 
+
     public void addAddress(String alias, String address, String city, String postcode, String country, String phone) {
+
         aliasInput.click();
         aliasInput.clear();
         aliasInput.sendKeys(alias);

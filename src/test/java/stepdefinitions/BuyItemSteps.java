@@ -58,9 +58,9 @@ public class BuyItemSteps {
 
     @Then("^Make a screenshot of payment$")
     public void makeAScreenshotOfPayment() throws IOException {
-        File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String fileName = new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss'-screenshot.png'").format(new Date());
-        FileUtils.copyFile(scrFile, new File("screenshots/"+fileName));
+        FileUtils.copyFile(scrFile, new File("screenshots/" + fileName));
 
         driver.quit();
 
