@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.awt.*;
 import java.util.List;
 
 
@@ -42,6 +43,11 @@ public class AddressPage {
     @FindBy(css = ".alert.alert-success")
     WebElement successInformation;
 
+    @FindBy(xpath = "//a[@data-link-action='delete-address']")
+    WebElement deleteButton;
+
+    @FindBy(css = ".alert.alert-success")
+    WebElement deletedAddressInformation;
 
     public void addAddress(String alias, String address, String city, String postcode, String country, String phone) {
 
@@ -79,5 +85,12 @@ public class AddressPage {
 
     public String getUpdateInformation() {
         return successInformation.getText();
+    }
+
+    public void deleteAddress() {
+        deleteButton.click();
+    }
+    public String getDeleteInformation() {
+        return deletedAddressInformation.getText();
     }
 }

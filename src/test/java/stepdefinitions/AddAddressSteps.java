@@ -56,6 +56,17 @@ public class AddAddressSteps {
     @Then("^User gets \"([^\"]*)\"$")
     public void userSees(String actionMessage) {
         Assert.assertEquals(actionMessage, addressPage.getUpdateInformation());
+    }
+
+    @And("^User deletes address$")
+    public void userDeletesAddress() {
+        addressPage.deleteAddress();
+
+    }
+
+    @Then("^User deleted address and gets \"([^\"]*)\"$")
+    public void addressDeleted(String confirmationMessage) {
+        Assert.assertEquals(confirmationMessage, addressPage.getDeleteInformation());
         driver.quit();
     }
 }
