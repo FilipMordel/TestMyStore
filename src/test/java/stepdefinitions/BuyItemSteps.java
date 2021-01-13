@@ -5,6 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -12,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import pages.CartPage;
 import pages.ItemPage;
 import pages.LoginPage;
+import pages.ProductPage;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,6 +50,12 @@ public class BuyItemSteps {
         itemPage = new ItemPage(driver);
         itemPage.choseItem(size, quantity);
     }
+    @And("^Check if discounted properly$")
+    public void checkIfDiscountedProperly() {
+        ProductPage productPage = new ProductPage(driver);
+        Assert.assertEquals(productPage.priceAfterDiscount(), productPage.priceADShouldBe(),0.001);
+    }
+
 
     @And("^User add item to cart and buy it$")
     public void userAddItemToCart() {
@@ -65,6 +73,7 @@ public class BuyItemSteps {
         driver.quit();
 
     }
+
 
 
 }
