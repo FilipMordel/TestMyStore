@@ -50,10 +50,11 @@ public class BuyItemSteps {
         itemPage = new ItemPage(driver);
         itemPage.choseItem(size, quantity);
     }
+
     @And("^Check if discounted properly$")
     public void checkIfDiscountedProperly() {
         ProductPage productPage = new ProductPage(driver);
-        Assert.assertEquals(productPage.priceAfterDiscount(), productPage.priceADShouldBe(),0.001);
+        Assert.assertEquals(productPage.priceAfterDiscount(), productPage.priceADShouldBe(), 0.001);
     }
 
 
@@ -73,7 +74,6 @@ public class BuyItemSteps {
         driver.quit();
 
     }
-
 
 
 }
